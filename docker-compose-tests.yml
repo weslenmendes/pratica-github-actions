@@ -1,0 +1,20 @@
+version: "3"
+services:
+  database_pratica:
+    image: postgres
+    container_name: database_pratica
+    restart: always
+    ports:
+      - 2345:5432
+    env_file:
+      - .env.test
+
+  node_app:
+    container_name: node_app
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - database_pratica
+    env_file:
+      - .env.test
