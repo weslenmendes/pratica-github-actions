@@ -15,4 +15,4 @@ jobs:
           env_key_POSTGRES_URL: "postgres://postgres:postgres@database_pratica:5432/students__tests"
           file_name: .env.test
       - name: Run tests
-        run: docker-compose -f docker-compose-tests.yml run nodeapp npm run test
+        run: docker-compose -f docker-compose-tests.yml run node_app npm run test
